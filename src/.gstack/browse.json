@@ -1,0 +1,9 @@
+{
+  "pid": 66985,
+  "port": 45518,
+  "token": "25924838-8bd1-4109-8db1-fae79a964a11",
+  "startedAt": "2026-10-05T00:16:03.409Z",
+  "serverPath": "/Users/trev/.claude/skills/gstack/browse/src/server.ts",
+  "mode": "headed",
+  "configHash": "5d55da6d39d487d2"
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLASHBOY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- ============ VISOR HUD ============ -->
+<div id="hud" class="hidden">
+  <svg id="visor-frame" viewBox="0 0 1600 900" preserveAspectRatio="none">
+    <path d="M40,190 Q40,60 190,40" />
+    <path d="M1560,190 Q1560,60 1410,40" />
+    <path d="M40,710 Q40,840 190,860" />
+    <path d="M1560,710 Q1560,840 1410,860" />
+    <path class="thin" d="M300,28 L1300,28" />
+    <path class="thin" d="M300,872 L620,872 M980,872 L1300,872" />
+    <path class="thin" d="M18,300 L18,600" />
+    <path class="thin" d="M1582,300 L1582,600" />
+  </svg>
+
+  <div id="vitals">
+    <div class="label">ENERGY</div>
+    <div id="hp-num">100</div>
+    <div class="bar"><div id="hp-bar"></div><div id="hp-ghost"></div></div>
+    <div class="label small">KI</div>
+    <div class="bar ki"><div id="ki-bar"></div></div>
+  </div>
+
+  <div id="threat">
+    <div class="label">THREAT</div>
+    <div class="threat-track"><div id="threat-fill"></div></div>
+  </div>
+
+  <div id="visor-mode">COMBAT VISOR</div>
+
+  <div id="reticle"><div class="r-dot"></div><div class="r-ring"></div></div>
+  <div id="lock" class="hidden"><i></i><i></i><i></i><i></i></div>
+  <div id="charge-ring" class="hidden"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" id="charge-arc"/></svg></div>
+
+  <div id="scan-markers"></div>
+  <div id="scan-progress" class="hidden"><div id="scan-fill"></div><span>SCANNING</span></div>
+  <div id="scan-panel" class="hidden">
+    <div id="scan-title"></div>
+    <div id="scan-text"></div>
+    <div class="scan-foot">[E] CLOSE VISOR · [LMB] CONTINUE</div>
+  </div>
+
+  <div id="boss" class="hidden">
+    <div id="boss-name">UNKNOWN</div>
+    <div class="boss-track"><div id="boss-fill"></div></div>
+  </div>
+
+  <div id="area-name"></div>
+  <div id="message"></div>
+  <div id="hint"></div>
+  <div id="damage-flash"></div>
+  <div id="focus-overlay"></div>
+  <div id="fade"></div>
+</div>
+
+<!-- ============ TITLE ============ -->
+<div id="title">
+  <div class="title-inner">
+    <div class="pre">KUROGANE-9 ORBITAL ARCOLOGY · SIGNAL LOST 41:12:07</div>
+    <h1>SLASHBOY</h1>
+    <div class="sub">a kage-class operative is inbound</div>
+    <button id="start-btn">BEGIN DESCENT</button>
+    <div class="controls">
+      <div><b>WASD</b> move</div><div><b>MOUSE</b> look</div>
+      <div><b>LMB</b> strike · combo</div><div><b>HOLD LMB</b> arc wave</div>
+      <div><b>RMB</b> guard · time it to deflect</div><div><b>SHIFT</b> phantom dash</div>
+      <div><b>SPACE</b> jump</div><div><b>Q</b> lock-on</div>
+      <div><b>E</b> scan visor</div><div><b>R</b> kage focus</div>
+    </div>
+    <div class="note">Headphones strongly recommended. Play in the dark.</div>
+  </div>
+</div>
+
+<div id="pause" class="hidden overlay"><div><h2>PAUSED</h2><p>click to resume</p></div></div>
+<div id="death" class="hidden overlay"><div><h2>SIGNAL TERMINATED</h2><p>reconstituting at last checkpoint…</p></div></div>
+<div id="end" class="hidden overlay"><div>
+  <h2>SECTOR 1 // CLEARED</h2>
+  <p id="end-text">The lift descends into the Bloom.<br>Slashboy will return.</p>
+  <p class="small" id="end-stats"></p>
+</div></div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

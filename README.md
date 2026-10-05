@@ -3,6 +3,20 @@
 A Metroid Prime-style first-person action game. You are a kage-class operative with an energy katana,
 sent into the silent orbital arcology KUROGANE-9.
 
+You wake in the dark with a blade, a visor and no map. KUROGANE-9 went silent forty-one hours ago, and whatever
+replaced its crew has grown through the walls. Fight in tight, melee-first first-person combat (parry, deflect
+plasma, dash through enemies, charge arc waves), scan the world for lore and weak points, and unlock traversal
+abilities that open up the interconnected sectors behind you. Rain-slick neon streets, molten foundries and
+cold data vaults are lit in real time with volumetric fog, and every sound is generated, so it's best played
+with headphones in the dark.
+
+| | |
+|---|---|
+| ![The Undercity: rain-soaked neon chasm floor](docs/screenshots/undercity.jpg) | ![The Foundry: smelting hall over a lava river](docs/screenshots/foundry.jpg) |
+| **Undercity**: the rain-soaked hub below the arcology | **Foundry**: a smelting hall over a lava river |
+| ![The Archives: data stacks and index locks](docs/screenshots/archives.jpg) | ![Creatures in the Ring C concourse](docs/screenshots/creatures.jpg) |
+| **Archives**: data stacks guarded by the Archivist | **Ring C**: some of the things living in the concourse |
+
 There are two builds in this repo:
 
 | Build | Where | Status |
